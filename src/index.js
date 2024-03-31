@@ -10,7 +10,14 @@ const root=ReactDOM.createRoot(element);
 
 // create component (Component is a function that returns a jsx)
 function App(){
-    return <h1>Hello World !</h1>
+    let message="Bye There !";
+    let randomNum=Math.random()
+    if (randomNum>0.5){
+        console.log(randomNum)
+        message="Hello There !!!"
+    }
+    return <h1>{message}</h1> // writing this doesn't make anything show up in the browser, this creates an instruction telling it to make an element, We have to return it from a component to use it.
 }
+
 //show the component on the screen
 root.render(<App />);
