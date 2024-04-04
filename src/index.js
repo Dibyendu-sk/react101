@@ -1,23 +1,14 @@
 // Import react and react dom libraries
 import React from "react";
 import ReactDOM from 'react-dom/client';
+import App,{message} from "./App"; // we can Rename the First App as this is a default export (ref - App.js)
+// We can't rename the message as it is a named export, also we have to write it in {}.
 
 // get a reference to the div with id 'root'
 const element=document.getElementById('root');
 
 //tell react to take control of that element
 const root=ReactDOM.createRoot(element);
-
-// create component (Component is a function that returns a jsx)
-function App(){
-    let message="Bye There !";
-    let randomNum=Math.random()
-    if (randomNum>0.5){
-        console.log(randomNum)
-        message="Hello There !!!"
-    }
-    return <h1>{message}</h1> // writing this doesn't make anything show up in the browser, this creates an instruction telling it to make an element, We have to return it from a component to use it.
-}
-
+console.info(message+" there")
 //show the component on the screen
 root.render(<App />);
