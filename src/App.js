@@ -1,21 +1,10 @@
-// create component (Component is a function that returns a jsx)
+import ProfileCard from "./ProfileCard";
 function App(){
-    const inputeType="number"
-    const min=5
-    const message="Enter Your Age"
-    return (
-        <input
-            min={min}
-            maxLength={5}
-            spellCheck
-            placeholder={message}
-            style={{color:"navy"}}
-        />
-        // <textarea
-        //     autoFocus={true}
-        // />
-    ) // writing this doesn't make anything show up in the browser, this creates an instruction telling it to make an element, We have to return it from a component to use it.
+    return <div>
+        <div>Personal AI Assistance</div>
+        <ProfileCard title="title1" handle={"@handle1"}/>
+        <ProfileCard title="title2" handle={"@handle2"}/>
+        <ProfileCard title="title3" handle={"@handle3"}/>
+    </div>
 }
 export default App;
-const message='Hello'
-export {message}; // for named export we have to write it in {}.
