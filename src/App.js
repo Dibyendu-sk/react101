@@ -1,13 +1,27 @@
 import {useState} from "react";
+import AnimalShow from "./AnimalShow";
+import './css/App.css'
 
+function getRandomAnimal(){
+    const animals=["cat","dog","cow","croc","horse","bird"];
+
+    return animals[Math.floor(Math.random()*animals.length)]
+}
 function App(){
-    const [count,/*setter for count*/setCount]=useState(0); // set default value of count to 0.
+    const [animals,setAnimal]=useState([]);
     const handleClick=()=>{
-        setCount(count+1) // updating the value of count
+        setAnimal([...animals,getRandomAnimal()])
     }
-    return <div>
+    const renderedAnimals=animals.map(
+        (item,index)=>{
+            return <AnimalShow animalType={item} key={index}/>
+        }
+    )
+    return <div className={"app"}>
         <button onClick={handleClick}>Add Animal</button>
-        <div>Number Of Animals : {count}</div>
+        <div className={"animal-list"}>{renderedAnimals}</div>
+
     </div>
 }
+
 export default App;
