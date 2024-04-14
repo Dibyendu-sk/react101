@@ -1,12 +1,13 @@
+import {useState} from "react";
 
 function App(){
+    const [count,/*setter for count*/setCount]=useState(0); // set default value of count to 0.
     const handleClick=()=>{
-        alert("Button Was Clicked");
+        setCount(count+1) // updating the value of count
     }
     return <div>
-        {/*<button onClick={handleClick}>Add Animal</button>*/}
-        {/*we can also write ir like this*/}
-        <button onClick={()=>alert("Button Was Clicked")}>Add Animal</button>
+        <button onClick={handleClick}>Add Animal</button>
+        <div>Number Of Animals : {count}</div>
     </div>
 }
 export default App;
